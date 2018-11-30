@@ -1,0 +1,22 @@
+{
+  "name": "unitTest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "koa": "^2.6.2",
+    "koa-combine-routers": "^4.0.2",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.3.14"
+  }
+}

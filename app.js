@@ -9,10 +9,10 @@ const app = new Koa()
 
 app.use(morgan((tokens, req, res) => {
     let status = tokens.status(req, res)
-    let statusColor = status >= 500 
-    ? 'bgRed' : status >= 400
-    ? 'bgYellow' : status >= 300
-    ? 'bgCyan' : 'bgGreen'
+    let statusColor = status >= 500
+        ? 'red' : status >= 400
+            ? 'yellow' : status >= 300
+                ? 'cyan' : 'bgGreen'
     return [
         chalk.hex('#34ace0').bold(tokens.method(req, res)),
         chalk[statusColor].bold(tokens.status(req, res)),
@@ -26,10 +26,7 @@ app.use(async (ctx, next) => {
         await next()
     } catch (err) {
         ctx.status = err.status || 500
-        ctx.body = { message: err.message }
-        if (err.status != 404)
-            console.error(err.stack)
-        //console.log(err.message)
+        ctx.body = { message: app.env === 'development' ? err.stack : err.message }
     }
 })
 

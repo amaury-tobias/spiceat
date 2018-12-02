@@ -11,27 +11,27 @@ router.get('/category', async ctx => {
 
 router.get('/categoryAdd', async ctx => {
     /*RecipeModel.create({
-        name: 'Hamburguesa de pollo',
+        name: 'Hamburguesa de res',
         category: 'Hamburguesas',
         details: [{
             number: 1,
-            img: 'BurgerChkn1',
-            description: 'Compre pollo (que no este verde pls)'
+            img: 'BurgerRes1',
+            description: 'Compre res, molida picada yo que se (que no este verde pls)'
         },
         {
             number: 2,
-            img: 'BurgerChkn2',
-            description: 'Ponga el pollo entre los panes, (cocido, no sea barbaro)'
+            img: 'BurgerRes2',
+            description: 'Ponga la carne entre los panes, con haria huevo y sasonada (cocida, no sea barbaro)'
         },
         {
             number: 3,
-            img: 'BurgerChkn3',
-            description: 'Agreguele unas verduritas, ¿Cuantas?, yo que sea pocas'
+            img: 'BurgerRes3',
+            description: 'Agreguele unas verduritas, ¿Cuantas?, yo que sea pocas, muchas mejor'
         },
         {
             number: 4,
-            img: 'BurgerChkn4',
-            description: '¡Listo!, jamburguesa lista'
+            img: 'BurgerRes4',
+            description: '¡Listo!, jamburguesa lista (de Res)'
         }]
     })*/
 })
@@ -39,7 +39,7 @@ router.get('/categoryAdd', async ctx => {
 router.get('/category/:name', async ctx => {
     let name = ctx.params.name
 
-    let recipes = await RecipeModel.find({ category: name })
+    let recipes = await RecipeModel.find({ category: name }, '_id name category')
     if (recipes.length > 0)
         ctx.body = recipes
     else

@@ -7,7 +7,7 @@ const router = require('./controllers/index')
 
 const app = new Koa()
 
-app.use(morgan((tokens, req, res) => {
+app.use(morgan('dev', (tokens, req, res) => {
     let status = tokens.status(req, res)
     let statusColor = status >= 500
         ? 'red' : status >= 400

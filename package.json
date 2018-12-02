@@ -1,10 +1,14 @@
 {
-  "name": "unitTest",
+  "name": "unittest",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.13.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +20,9 @@
     "koa": "^2.6.2",
     "koa-combine-routers": "^4.0.2",
     "koa-morgan": "^1.0.1",
+    "koa-passport": "^4.1.1",
     "koa-router": "^7.4.0",
-    "mongoose": "^5.3.14"
+    "mongoose": "^5.3.14",
+    "passport-local": "^1.0.0"
   }
 }

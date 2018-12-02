@@ -38,15 +38,25 @@ router.get('/categoryAdd', async ctx => {
 
 router.get('/category/:name', async ctx => {
     let name = ctx.params.name
+
     let recipes = await RecipeModel.find({ category: name })
-    ctx.body = recipes
+    if (recipes.length > 0)
+        ctx.body = recipes
+    else
+        ctx.throw(400, 'Elija una categoria valida')
+
+
 })
 
 router.get('/category/:name/:id', async ctx => {
     let name = ctx.params.name
     let id = ctx.params.id
-    let recipe = await RecipeModel.findById(id)
-    ctx.body = recipe
+    try {
+        let recipe = await RecipeModel.findById(id)
+        ctx.body = recipe
+    } catch (err) {
+        ctx.throw(400, 'Elija una receta valida')
+    }
 })
 
 module.exports = router

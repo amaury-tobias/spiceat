@@ -5,8 +5,17 @@ const RecipeSchema = new Schema({
     name: {
         type: String
     },
-    category: {
+    topic: {
         type: String
+    },
+    img: {
+        type: String
+    },
+    desc: {
+        type: String
+    },
+    ingredients: {
+        type: []
     },
     details: {
         type: []

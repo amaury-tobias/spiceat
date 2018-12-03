@@ -97,6 +97,7 @@ router.get('/init', async ctx => {
             description: '¡Listo!, jamburguesa lista (de Pescado)'
         }]
     })
+    ctx.body = 'Initialized DB'
 })
 
 router.get('/category', async ctx => {

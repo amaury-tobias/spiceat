@@ -42,7 +42,7 @@ app.use((ctx, next) => {
 })
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Server started: http://localhost:3000');
+    console.log(`Server started: http://localhost:${process.env.PORT || 3000}`);
 })
 
 process.on('SIGINT', () => {
